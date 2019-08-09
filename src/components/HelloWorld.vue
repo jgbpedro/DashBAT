@@ -17,20 +17,27 @@
         td {{user.insta || '-'}}
         td {{user.password}}
         td.text-left
-          div.text-success(v-if="user.analytics.youtube.subscribe") Subscribed
-          div.text-danger(v-else="user.analytics.youtube.subscribe") Not Subscribed
-          div Liked
+          div
+            span Subscribed 
+            i.fa.fa-close.text-success(v-if="user.analytics.youtube.subscribe")
+            i.fa.fa-close.text-danger(v-else) 
+          div
+            span Liked 
+            i.fa.fa-close.text-success(v-if="user.analytics.youtube.likedAll")
+            i.fa.fa-close.text-danger(v-else) 
           div Comment 
+            i.fa.fa-close.text-success(v-if="user.analytics.youtube.comment")
+            i.fa.fa-close.text-danger(v-else)
+          //div Last Updated: {{user.analytics.youtube.lastUpdate}}
+        td.text-left
+          div Subscribe
+          div Liked
+          div Listen
           div Last Updated
         td.text-left
           div Subscribe
           div Liked
-          div Comment 
-          div Last Updated
-        td.text-left
-          div Subscribe
-          div Liked
-          div Comment 
+          div Listen
           div Last Updated    
 </template>
 
