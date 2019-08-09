@@ -17,7 +17,8 @@
         td {{user.insta || '-'}}
         td {{user.password}}
         td.text-left
-          div Subscribe
+          div.text-success(v-if="user.analytics.youtube.subscribe") Subscribed
+          div.text-danger(v-else="user.analytics.youtube.subscribe") Not Subscribed
           div Liked
           div Comment 
           div Last Updated
